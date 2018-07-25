@@ -44,9 +44,9 @@ public abstract class BaseViewModel<N> extends ViewModel {
 //        return mDataManager;
 //    }
 //
-//    public ObservableBoolean getIsLoading() {
-//        return mIsLoading;
-//    }
+    public ObservableBoolean getIsLoading() {
+        return mIsLoading;
+    }
 
     public void setIsLoading(boolean isLoading) {
         mIsLoading.set(isLoading);

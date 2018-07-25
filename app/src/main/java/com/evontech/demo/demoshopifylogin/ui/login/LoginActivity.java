@@ -3,7 +3,9 @@ package com.evontech.demo.demoshopifylogin.ui.login;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.evontech.demo.demoshopifylogin.BR;
 import com.evontech.demo.demoshopifylogin.R;
 import com.evontech.demo.demoshopifylogin.databinding.ActivityLoginBinding;
 import com.evontech.demo.demoshopifylogin.ui.base.BaseActivity;
@@ -21,7 +23,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
 
     @Override
     public int getBindingVariable() {
-        return 0;//BR.viewModel;
+        return BR.viewModel;
     }
 
     @Override
@@ -41,14 +43,14 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
 
     @Override
     public void login() {
-//        String email = mActivityLoginBinding.etEmail.getText().toString();
-//        String password = mActivityLoginBinding.etPassword.getText().toString();
-//        if (mLoginViewModel.isEmailAndPasswordValid(email, password)) {
-//            hideKeyboard();
-//            mLoginViewModel.login(email, password);
-//        } else {
-//            Toast.makeText(this, getString(R.string.invalid_email_password), Toast.LENGTH_SHORT).show();
-//        }
+        String email = mActivityLoginBinding.etEmail.getText().toString();
+        String password = mActivityLoginBinding.etPassword.getText().toString();
+        if (mLoginViewModel.isEmailAndPasswordValid(email, password)) {
+            hideKeyboard();
+            mLoginViewModel.login(email, password);
+        } else {
+            Toast.makeText(this, getString(R.string.invalid_email_password), Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
